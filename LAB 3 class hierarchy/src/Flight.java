@@ -1,24 +1,28 @@
-class Airport {
-    String airportCode;
-    int numberOfGates;
-    int numberOfTerminals;
-    int numberOfRunways;
+class Flight {
+    private String flightNumber;
+    private String  arrivalTime;
+    private String departureTime;
+    private boolean isFlightDelayed;
+    private String aiportOfOrigin;
+    private String destinationAirport;
 
-    // constructor
-    public Airport(String airportCode, int gate, int terminals, int runways) {
-        this.airportCode = airportCode;
-        this.numberOfGates = gate;
-        this.numberOfTerminals = terminals;
-        this.numberOfRunways= runways;
+    // constructor;
+    public Airport(String flightNum, String arriveTime, String departTime, Boolean delay, String origin,String dest) {
+            this.flightNumber= flightNum;
+            this.arrivalTime = arriveTime;
+            this.departureTime = departTime
+        this.isFlightDelayed= delay;
+        this.aiportOfOrigin= origin;
+        this.destinationAirport= dest;
     }
 
     // getters + setters
 
-    public void setAirportCode(String code) {
-        airportCode = code;
+    public void setFlightNumber(String code) {
+        flightNumber = code;
     }
-    public String getAirportCode() {
-        return airportCode;
+    public String getFlightNumber() {
+        return flightNumber;
     }
 
     public void setNumberOfGates(int gates) {
@@ -46,7 +50,7 @@ class Airport {
 
 
     public void printDetails() {
-       System.out.println("Airport Details: ");
+        System.out.println("Airport Details: ");
         System.out.println("   Airport Code: "+ getAirportCode());
         System.out.println("   Number of gates: "+ getNumberOfGates() );
         System.out.println("   Number of runways: "+ getNumberOfRunways());
