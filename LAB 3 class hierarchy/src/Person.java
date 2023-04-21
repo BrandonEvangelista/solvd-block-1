@@ -1,16 +1,28 @@
-public abstract class Person {
-    private String firstName;
-    private String lastName;
+public class Employee extends Person {
+    private int employeeId;
+    private double salary;
 
-    public void setFirstName(String fName) {firstName = fName;}
 
-    public String getFirstName() {
-        return firstName;
+    public Employee(String firstName, String lastName, int employeeId, double salary) {
+        super(firstName, lastName);
+        this.employeeId = employeeId;
+        this.salary = salary;
     }
 
-    public void setLastName(String lName) {lastName = lName;}
+    // Getters and setters
+    public int getEmployeeId() {
+        return employeeId;
+    }
 
-    public String getLastName() {return lastName;}
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
+    }
 
+    public double getSalary() {
+        return salary;
+    }
 
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
 }
