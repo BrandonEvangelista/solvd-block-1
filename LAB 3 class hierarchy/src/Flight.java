@@ -3,16 +3,21 @@ class Flight {
     private String arrivalTime;
     private String departureTime;
     private boolean isFlightDelayed;
-    private String aiportOfOrigin;
+    private String airportOfOrigin;
     private String destinationAirport;
+    private double airfare;
+    private int numberOfStops;
 
     // constructor;
-    public Airport(String flightNum, String arriveTime, String departTime, Boolean delay, String origin, String dest) {
+    public Flight (String flightNum, String arriveTime, String departTime, Boolean delay, String origin, String dest, double cost) {
         this.flightNumber = flightNum;
         this.arrivalTime = arriveTime;
-        this.departureTime = departTime this.isFlightDelayed = delay;
-        this.aiportOfOrigin = origin;
+        this.departureTime = departTime;
+        this.isFlightDelayed = delay;
+        this.airportOfOrigin = origin;
         this.destinationAirport = dest;
+        this.airfare = cost;
+
     }
 
     // getters + setters
@@ -25,38 +30,55 @@ class Flight {
         return flightNumber;
     }
 
-    public void setNumberOfGates(int gates) {
-
-        numberOfGates = gates;
+    public void setArrivalTime(String arriveTime) {
+        arrivalTime = arriveTime;
     }
 
-    public int getNumberOfGates() {
-        return numberOfGates;
+    public String getArrivalTime() {
+        return arrivalTime;
     }
 
-    public void setNumberOfTerminals(int terminals) {
-        numberOfGates = terminals;
+    public void setDepartureTime(String departTime) {
+        departureTime = departTime;
     }
 
-    public int getNumberOfTerminals() {
-        return numberOfTerminals;
+    public String getDepartureTime() {
+        return departureTime;
     }
 
-    public void setNumberOfRunways(int runway) {
-        numberOfRunways = runway;
+    public void setIsFlightDelayed(boolean delayedStatus) {
+        isFlightDelayed = delayedStatus;
     }
 
-    public int getNumberOfRunways() {
-        return numberOfRunways;
+    public boolean getIsFlightDelayed() {
+        return isFlightDelayed;
     }
+
+    public void setAirportOfOrigin(String origin) { airportOfOrigin = origin;}
+
+    public String getAirportOfOrigin() {return airportOfOrigin;}
+
+    public void setDestinationAirport(String destination) {destinationAirport = destination;}
+
+    public String getDestinationAirport () {return destinationAirport;}
+
+    public void setAirfare (double cost) {airfare = cost;}
+
+    public double getAirfare () {return airfare;}
+
+
+
+
+
 
     // print
 
 
     public void printDetails() {
-        System.out.println("Airport Details: ");
-        System.out.println("   Airport Code: " + getAirportCode());
-        System.out.println("   Number of gates: " + getNumberOfGates());
-        System.out.println("   Number of runways: " + getNumberOfRunways());
+        System.out.println("Flight Details: ");
+        System.out.println("   FLight Number: " + getFlightNumber());
+        System.out.println("   Arrival Time: " + getArrivalTime());
+        System.out.println("   Departure Time: " + getDepartureTime());
+        System.out.println("  Airfare Cost: " + getAirfare());
     }
 }
