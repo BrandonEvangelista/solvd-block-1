@@ -1,3 +1,5 @@
+package airport;
+
 class Flight {
     private String flightNumber;
     private String arrivalTime;
@@ -75,7 +77,7 @@ class Flight {
 
 
     public void printDetails() {
-        System.out.println("Flight Details: ");
+        System.out.println("airport.Flight Details: ");
         System.out.println("   FLight Number: " + getFlightNumber());
         System.out.println("   Arrival Time: " + getArrivalTime());
         System.out.println("   Departure Time: " + getDepartureTime());

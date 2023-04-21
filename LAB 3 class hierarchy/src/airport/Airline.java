@@ -1,3 +1,5 @@
+package airport;
+
 public class Airline {
     private String name;
     private String code;

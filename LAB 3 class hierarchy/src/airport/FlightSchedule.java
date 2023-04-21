@@ -1,3 +1,5 @@
+package airport;
+
 public class FlightSchedule {
     private Flight[] flights;
     private int numFlights;

@@ -1,3 +1,5 @@
+package airport;
+
 public class Runway {
     private int length;
     private boolean isAvailable;
@@ -27,4 +29,4 @@ public class Runway {
 
 
     }
-}
+

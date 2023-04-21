@@ -1,3 +1,5 @@
+package airport;
+
 public class Plane {
     private String make;
     private String model;

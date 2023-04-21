@@ -1,3 +1,5 @@
+package airport;
+
 class Airport {
     private String airportCode;
     private int numberOfGates;
@@ -23,7 +25,7 @@ class Airport {
     }
 
     public void setNumberOfGates(int gates) {
-        numberOfGates = gates;
+        numberOfGa  tes = gates;
     }
 
     public int getNumberOfGates() {
@@ -50,8 +52,8 @@ class Airport {
 
 
     public void printDetails() {
-        System.out.println("Airport Details: ");
-        System.out.println("   Airport Code: " + getAirportCode());
+        System.out.println("airport.Airport Details: ");
+        System.out.println("   airport.Airport Code: " + getAirportCode());
         System.out.println("   Number of gates: " + getNumberOfGates());
         System.out.println("   Number of runways: " + getNumberOfRunways());
     }

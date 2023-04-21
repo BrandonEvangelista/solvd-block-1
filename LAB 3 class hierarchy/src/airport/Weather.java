@@ -1,3 +1,5 @@
+package airport;
+
 class Weather {
     private double temperature;
     private int windSpeed;
