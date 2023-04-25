@@ -3,12 +3,11 @@ package com.solvd;
 public class Main {
     public static void main(String[] args) {
 
-
-        Person person = new Person ("dan","cook",34);
-        System.out.print(person.toString());
-
         Pilot pilotJohn = new Pilot("John","Doe", 30, 90000,"Pilot");
         Pilot pilotDoe = new Pilot("Doe","John", 30, 90000,"Pilot");
+        Bartender bartender1 = new Bartender("Bart","Simpson", 30, 90000,"Bartender");
+        Bartender bartender2 = new Bartender("Lisa","Simpson", 30, 90000,"Bartender");
+
 
         FlightAttendant flightAttendant1 = new FlightAttendant("Jane","Doe",30,60000,"flight attendant");
         FlightAttendant flightAttendant2 = new FlightAttendant("Jane2","Do2",30,60000,"flight attendant");
@@ -25,8 +24,8 @@ public class Main {
                 flightAttendant4
         } ;
 
-        CabinCrew cabinCrew1 = new CabinCrew( pilotJohn, attendantsFlightA123 );
-        CabinCrew cabinCrew2 = new CabinCrew( pilotDoe, attendantsFlightB123 );
+        CabinCrew cabinCrew1 = new CabinCrew( pilotJohn, attendantsFlightA123, bartender1 );
+        CabinCrew cabinCrew2 = new CabinCrew( pilotDoe, attendantsFlightB123, bartender2 );
 
         Plane planeA123 = new Plane ("Boeing","747",415,cabinCrew1);
         Plane planeB123 = new Plane ("Boeing","787",550 ,cabinCrew2);
@@ -54,6 +53,25 @@ public class Main {
             passenger4, passenger5, passenger6
         };
 
+      Flight A123 = new Flight("United","A123","SFO","LAX",1,100,passengersFlightA123);
+      Flight B123 = new Flight("Delta","B123","SFO","JFK",3,300,passengersFlightB123);
+
+
+
+        //lets calculate Bruce Wayne's Airfare
+        System.out.println( "total cost of flight " + Flight.calculateFlightCost(A123.getBaseCost(),passenger1.getNumberOfCheckedBags(),passenger1.isMealOrdered(),passenger1.getSeatClass()));
+
+        flightAttendant1.doAssignedTask1();  // Board passengers + safety debrief
+
+        pilotJohn.doAssignedTask1();    // Pilot Takes off
+
+        bartender1.doAssignedTask1();  // opens bar...sells drinks
+
+        flightAttendant1.doAssignedTask2(); // serves meals.
+
+        bartender1.doAssignedTask2();  // closes bar..
+
+        pilotJohn.doAssignedTask2();   // Pilot Lands plane
 
     }
 }

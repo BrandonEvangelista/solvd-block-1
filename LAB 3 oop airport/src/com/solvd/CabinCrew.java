@@ -1,12 +1,14 @@
 package com.solvd;
 
-public class CabinCrew {
+public class CabinCrew<bartender> {
     private Pilot pilot;
     private FlightAttendant[] flightAttendants;
+    private Bartender bartender;
 
-    public CabinCrew(Pilot pilot, FlightAttendant[] flightAttendants) {
+    public CabinCrew(Pilot pilot, FlightAttendant[] flightAttendants, Bartender bartender) {
         this.pilot = pilot;
         this.flightAttendants = flightAttendants;
+        this.bartender = bartender;
     }
 
     public Pilot getPilot() {
@@ -25,5 +27,11 @@ public class CabinCrew {
         this.flightAttendants = flightAttendants;
     }
 
+    public Bartender getBartender() {
+        return bartender;
+    }
 
+    public void setBartender(Bartender bartender) {
+        this.bartender = bartender;
+    }
 }

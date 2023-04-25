@@ -9,6 +9,7 @@ public class FlightAttendant extends Employee  {
 
     @Override
     public void  doAssignedTask1() {
+        System.out.println("Boarding Passengers...");
         System.out.println("Flight Attendants: Pre-flight plane safety debrief in process.....");
     }
     @Override
