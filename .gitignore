@@ -26,3 +26,12 @@ hs_err_pid*
 .DS_Store
 .idea
 .iml
+
+/.settings/org.eclipse.ltk.core.refactoring.prefs
+/test_site
+/.idea
+/gerrit-parent.iml
+*.iml
+*.sublime-*
+/gerrit-package-plugins
+/.buckconfig.local
