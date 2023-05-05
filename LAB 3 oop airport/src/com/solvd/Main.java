@@ -140,11 +140,11 @@ public class Main {
                 passenger4, passenger5, passenger6
         };
 
-        Flight A123 = new Flight("United", "A123", "SFO", "HK", 1, 100, passengersFlightA123);
-        Flight B123 = new Flight("Singapore Airlines", "B123", "SFO", "SIN", 3, 300, passengersFlightB123);
-        Flight C123 = new Flight("Emirates", "B123", "SFO", "SIN", 3, 300, passengersFlightB123);
-        Flight D123 = new Flight("Delta", "B123", "SFO", "SIN", 3, 300, passengersFlightB123);
-        Flight E123 = new Flight("Delta", "B123", "SFO", "SIN", 3, 300, passengersFlightB123);
+        Flight A123 = new Flight("United", "A123", "SFO", "HK", 1, 100, passengersFlightA123, sanFranciscoAndHongKong);
+        Flight B123 = new Flight("Singapore Airlines", "B123", "SFO", "SIN", 3, 300, passengersFlightB123, sanFranciscoAndSingapore);
+        Flight C123 = new Flight("Emirates", "B123", "SFO", "SIN", 3, 300, passengersFlightB123, sanFranciscoAndSingapore);
+        Flight D123 = new Flight("Delta", "B123", "SFO", "SIN", 3, 300, passengersFlightB123, sanFranciscoAndSingapore);
+        Flight E123 = new Flight("Delta", "B123", "SFO", "SIN", 3, 300, passengersFlightB123, sanFranciscoAndSingapore);
 
 
         //lets calculate Bruce Wayne's Airfare

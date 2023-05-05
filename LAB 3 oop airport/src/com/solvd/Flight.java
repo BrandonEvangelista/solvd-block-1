@@ -2,9 +2,10 @@ package com.solvd;
 
 
 public class Flight {
-    public final static double economyClassMultiplier = 1.0;
-    public final static double firstClassMultiplier = 2.0;
-    public final static double busClassMultiplier = 1.5;
+
+    public final static double ECONOMY_CLASS_MULTIPLIER = 1.0;
+    public final static double FIRST_CLASS_MULTIPLIER = 2.0;
+    public final static double BUSINESS_CLASS_MULTIPLIER = 1.5;
 
 
     private String airline;
@@ -98,11 +99,11 @@ public class Flight {
 
 
         if (seatClass.equals("firstClass")) {
-            seatMultiplier = firstClassMultiplier;
+            seatMultiplier = FIRST_CLASS_MULTIPLIER;
         } else if (seatClass.equals("business")) {
-            seatMultiplier = busClassMultiplier;
+            seatMultiplier = BUSINESS_CLASS_MULTIPLIER;
         } else {
-            seatMultiplier = economyClassMultiplier;
+            seatMultiplier = ECONOMY_CLASS_MULTIPLIER;
 
         }
 
