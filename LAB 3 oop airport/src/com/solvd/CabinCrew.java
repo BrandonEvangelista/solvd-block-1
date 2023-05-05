@@ -1,6 +1,6 @@
 package com.solvd;
 
-public class CabinCrew<bartender> {
+public class CabinCrew {
     private Pilot pilot;
     private FlightAttendant[] flightAttendants;
     private Bartender bartender;

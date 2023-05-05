@@ -9,11 +9,12 @@ public class Plane {
 
 
     // Constructor
-    public Plane(String make, String model, int passengerCapacity,CabinCrew cabinCrew) {
+    public Plane(String make, String model, int passengerCapacity, CabinCrew cabinCrew) {
         this.make = make;
         this.model = model;
         this.passengerCapacity = passengerCapacity;
         this.cabinCrew = cabinCrew;
+
 
     }
 

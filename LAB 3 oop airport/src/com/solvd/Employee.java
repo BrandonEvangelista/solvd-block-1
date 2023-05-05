@@ -3,7 +3,9 @@ package com.solvd;
 abstract class Employee extends Person {
     private int salary;
     private String role;
+
     abstract void doAssignedTask1();
+
     abstract void doAssignedTask2();
 
     Employee(String fName, String lName, int years, int salary, String role) {

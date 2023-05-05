@@ -1,5 +1,4 @@
 package com.solvd;
-import java.util.Objects;
 
 public class Airport {
     // Properties
@@ -7,7 +6,7 @@ public class Airport {
     private String code;
     private int numOfRunways;
     private Plane[] planes;
-
+    private AirportToAirportDistance[];
 
     // Constructor
     public Airport(String name, String code, int numOfRunways, Plane[] planes) {
@@ -49,7 +48,6 @@ public class Airport {
     public void setPlanes(Plane[] planes) {
         this.planes = planes;
     }
-
 
 
     @Override

@@ -7,10 +7,12 @@ public class Bartender extends Employee {
         super(fName, lName, years, salary, role);
 
     }
+
     @Override
     public void doAssignedTask1() {
-      System.out.println("Bartender: Now Serving Spirits and Wine ");
+        System.out.println("Bartender: Now Serving Spirits and Wine ");
     }
+
     @Override
     public void doAssignedTask2() {
         System.out.println("Bartender: Preparing for landing, bar is now closed.");

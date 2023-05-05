@@ -1,12 +1,11 @@
 package com.solvd;
-import java.util.Objects;
 
 public class Person {
     private String firstName;
     private String lastName;
     private int age;
 
-    Person (String fName, String lName, int years) {
+    Person(String fName, String lName, int years) {
         this.firstName = fName;
         this.lastName = lName;
         this.age = years;
@@ -38,9 +37,9 @@ public class Person {
 
     @Override
     public String toString() {
-        return "First Name: "+ firstName +
-                " Last Name: "+ lastName +
-                " age: "+ age;
+        return "First Name: " + firstName +
+                " Last Name: " + lastName +
+                " age: " + age;
 
     }
 }
