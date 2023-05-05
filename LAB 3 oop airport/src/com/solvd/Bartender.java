@@ -1,12 +1,28 @@
 package com.solvd;
 
-public class Bartender extends Employee {
+import com.solvd.airportInterfaces.PayableTimeClock;
+
+import java.time.LocalDateTime;
+
+public class Bartender extends Employee implements PayableTimeClock {
 
 
     public Bartender(String fName, String lName, int years, int salary, String role) {
         super(fName, lName, years, salary, role);
 
     }
+
+    private LocalDateTime clockInTime;
+    private LocalDateTime clockOutTime;
+
+    public void clockIn() {
+        LocalDateTime clockInTime = LocalDateTime.now();
+    }
+
+    public void clockOut() {
+        LocalDateTime clockOutTime = LocalDateTime.now();
+    }
+    
 
     @Override
     public void doAssignedTask1() {
