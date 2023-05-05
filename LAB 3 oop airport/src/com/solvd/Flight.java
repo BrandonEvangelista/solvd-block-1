@@ -91,23 +91,23 @@ public class Flight {
         this.distanceTraveled = distanceTraveled;
     }
 
-    public static double calculateFlightCost(int baseCost, int numberOfBagsChecked, boolean orderedMeal, String seatClass) {
+    public double calculateFlightCost(int baseCost, int numberOfBagsChecked, boolean orderedMeal, String seatClass) {
         double totalFlightCost = 1;
         double seatMultiplier;
-        int distanceTraveled = 0
+        int distanceTraveled;
 
 
-            if (seatClass.equals("firstClass")) {
-                seatMultiplier = firstClassMultiplier;
-            } else if (seatClass.equals("business")) {
-                seatMultiplier = busClassMultiplier;
-            } else {
-                seatMultiplier = economyClassMultiplier;
+        if (seatClass.equals("firstClass")) {
+            seatMultiplier = firstClassMultiplier;
+        } else if (seatClass.equals("business")) {
+            seatMultiplier = busClassMultiplier;
+        } else {
+            seatMultiplier = economyClassMultiplier;
 
-            }
+        }
 
 
-        totalFlightCost = seatMultiplier * (baseCost *  this.getDistanceTraveled());
+        totalFlightCost = seatMultiplier * (baseCost * this.getDistanceTraveled());
 
         int costOfBags = numberOfBagsChecked * 15;
 
