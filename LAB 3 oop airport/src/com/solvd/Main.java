@@ -27,15 +27,102 @@ public class Main {
         CabinCrew cabinCrew1 = new CabinCrew(pilotJohn, attendantsFlightA123, bartender1);
         CabinCrew cabinCrew2 = new CabinCrew(pilotDoe, attendantsFlightB123, bartender2);
 
+        AirportToAirportDistance sanFranciscoAndHongKong = new AirportToAirportDistance(11147);
+        AirportToAirportDistance sanFranciscoAndBelarus = new AirportToAirportDistance(8908);
+        AirportToAirportDistance sanFranciscoAndSingapore = new AirportToAirportDistance(13574);
+        AirportToAirportDistance sanFranciscoAndBuenosAires = new AirportToAirportDistance(10403);
+
+        AirportToAirportDistance hongKongAndBelarus = new AirportToAirportDistance(7777);
+        AirportToAirportDistance hongKongAndSingapore = new AirportToAirportDistance(2590);
+        AirportToAirportDistance hongKongAndBuenosAires = new AirportToAirportDistance(18457);
+
+        AirportToAirportDistance belarusAndSingapore = new AirportToAirportDistance(8956);
+        AirportToAirportDistance belarusAndBuenosAires = new AirportToAirportDistance(12807);
+
+        AirportToAirportDistance buenosAiresAndSingapore = new AirportToAirportDistance(15872);
+
+
         Plane planeA123 = new Plane("Boeing", "747", 415, cabinCrew1);
         Plane planeB123 = new Plane("Boeing", "787", 550, cabinCrew2);
+        Plane planeC123 = new Plane("Boeing", "787", 550, cabinCrew2);
+        Plane planeD123 = new Plane("Boeing", "787", 550, cabinCrew2);
+        Plane planeE123 = new Plane("Boeing", "787", 550, cabinCrew2);
 
         Plane[] planesAtSFO = new Plane[]{
                 planeA123,
-                planeB123
+                planeB123,
+                planeC123,
+                planeD123,
+                planeE123,
+        };
+        Plane[] planesAtHongKong = new Plane[]{
+                planeA123,
+                planeB123,
+                planeC123,
+                planeD123,
+                planeE123,
+        };
+        Plane[] planesAtBelarus = new Plane[]{
+                planeA123,
+                planeB123,
+                planeC123,
+                planeD123,
+                planeE123,
+
+        };
+        Plane[] planesAtSingapore = new Plane[]{
+                planeA123,
+                planeB123,
+                planeC123,
+                planeD123,
+                planeE123,
+        };
+        Plane[] planesAtBuenosAires = new Plane[]{
+                planeA123,
+                planeB123,
+                planeC123,
+                planeD123,
+                planeE123,
+        };
+        AirportToAirportDistance[] fromSFO = new AirportToAirportDistance[]{
+                sanFranciscoAndHongKong,
+                sanFranciscoAndBelarus,
+                sanFranciscoAndSingapore,
+                sanFranciscoAndBuenosAires
         };
 
-        Airport airport = new Airport("San Francisco Intl Airport", "SFO", 4, planesAtSFO);
+        AirportToAirportDistance[] fromHK = new AirportToAirportDistance[]{
+                hongKongAndBelarus,
+                hongKongAndSingapore,
+                hongKongAndSingapore,
+                sanFranciscoAndHongKong
+        };
+
+        AirportToAirportDistance[] fromBLR = new AirportToAirportDistance[]{
+                belarusAndSingapore,
+                belarusAndBuenosAires,
+                hongKongAndBelarus,
+                sanFranciscoAndBelarus
+        };
+
+        AirportToAirportDistance[] fromSIN = new AirportToAirportDistance[]{
+                belarusAndSingapore,
+                sanFranciscoAndSingapore,
+                hongKongAndSingapore,
+                buenosAiresAndSingapore
+        };
+        AirportToAirportDistance[] fromAEP = new AirportToAirportDistance[]{
+                buenosAiresAndSingapore,
+                belarusAndBuenosAires,
+                sanFranciscoAndBuenosAires,
+                hongKongAndBuenosAires
+        };
+
+        Airport airportSFO = new Airport("San Francisco Intl Airport", "SFO", 4, planesAtSFO, fromSFO);
+        Airport airportHK = new Airport("Hong Kong Intl Airport", "HK", 4, planesAtHongKong, fromHK);
+        Airport airportBLR = new Airport("Belarus Intl Airport", "BLR", 4, planesAtBelarus, fromBLR);
+        Airport airportSIN = new Airport("Singapore Intl Airport", "SIN", 4, planesAtSingapore, fromSIN);
+        Airport airportAEP = new Airport("Buenos Aires Intl Airport", "AEP", 4, planesAtBuenosAires, fromAEP);
 
 
         Passenger passenger1 = new Passenger("Bruce", "Wayne", 30, "firstClass", 100, true);
@@ -53,8 +140,11 @@ public class Main {
                 passenger4, passenger5, passenger6
         };
 
-        Flight A123 = new Flight("United", "A123", "SFO", "LAX", 1, 100, passengersFlightA123);
-        Flight B123 = new Flight("Delta", "B123", "SFO", "JFK", 3, 300, passengersFlightB123);
+        Flight A123 = new Flight("United", "A123", "SFO", "HK", 1, 100, passengersFlightA123);
+        Flight B123 = new Flight("Singapore Airlines", "B123", "SFO", "SIN", 3, 300, passengersFlightB123);
+        Flight C123 = new Flight("Emirates", "B123", "SFO", "SIN", 3, 300, passengersFlightB123);
+        Flight D123 = new Flight("Delta", "B123", "SFO", "SIN", 3, 300, passengersFlightB123);
+        Flight E123 = new Flight("Delta", "B123", "SFO", "SIN", 3, 300, passengersFlightB123);
 
 
         //lets calculate Bruce Wayne's Airfare

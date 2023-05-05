@@ -6,17 +6,16 @@ public class Airport {
     private String code;
     private int numOfRunways;
     private Plane[] planes;
-    private AirportToAirportDistance[];
+    private AirportToAirportDistance[] airportDistances;
 
-    // Constructor
-    public Airport(String name, String code, int numOfRunways, Plane[] planes) {
+    public Airport(String name, String code, int numOfRunways, Plane[] planes, AirportToAirportDistance[] airportDistances) {
         this.name = name;
         this.code = code;
         this.numOfRunways = numOfRunways;
         this.planes = planes;
+        this.airportDistances = airportDistances;
     }
 
-    // Getter and setter methods
     public String getName() {
         return name;
     }
@@ -49,6 +48,13 @@ public class Airport {
         this.planes = planes;
     }
 
+    public AirportToAirportDistance[] getAirportDistances() {
+        return airportDistances;
+    }
+
+    public void setAirportDistances(AirportToAirportDistance[] airportDistances) {
+        this.airportDistances = airportDistances;
+    }
 
     @Override
     public String toString() {

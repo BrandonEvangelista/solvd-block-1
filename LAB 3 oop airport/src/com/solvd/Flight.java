@@ -4,7 +4,7 @@ package com.solvd;
 public class Flight {
     public final static double economyClassMultiplier = 1.0;
     public final static double firstClassMultiplier = 2.0;
-    public final static  double busClassMultiplier = 1.5;
+    public final static double busClassMultiplier = 1.5;
 
 
     private String airline;
@@ -85,12 +85,16 @@ public class Flight {
         double totalFlightCost = 0;
         double seatMultiplier;
 
-        if (seatClass.equals("economy")) {
-            seatMultiplier = economyClassMultiplier;
-        } else if (seatClass.equals("business")) {
-            seatMultiplier = busClassMultiplier;
-        } else {
-            seatMultiplier = firstClassMultiplier;
+        try {
+            if (seatClass.equals("economy")) {
+                seatMultiplier = economyClassMultiplier;
+            } else if (seatClass.equals("business")) {
+                seatMultiplier = busClassMultiplier;
+            } else {
+                seatMultiplier = firstClassMultiplier;
+            }
+        } catch (Exception e) {
+            // Handle the exception here
         }
 
         totalFlightCost = seatMultiplier * baseCost;
