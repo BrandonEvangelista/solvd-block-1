@@ -12,10 +12,11 @@ public class Flight {
     private String flightOrigin;
     private String flightDestination;
     private int numberOfStops;
-    private int baseCost;  // cost is based on economy price. multiplier is added for business/first-class
+    private int baseCost;  // cost is based on total distance
     private Passenger[] passengers;
+    private int distanceTraveled;
 
-    public Flight(String airline, String flightNumber, String flightOrigin, String flightDestination, int numberOfStops, int baseCost, Passenger[] passengers) {
+    public Flight(String airline, String flightNumber, String flightOrigin, String flightDestination, int numberOfStops, int baseCost, Passenger[] passengers, int distanceTraveled) {
         this.airline = airline;
         this.flightNumber = flightNumber;
         this.flightOrigin = flightOrigin;
@@ -23,6 +24,7 @@ public class Flight {
         this.numberOfStops = numberOfStops;
         this.baseCost = baseCost;
         this.passengers = passengers;
+        this.distanceTraveled = distanceTraveled;
     }
 
     public String getAirline() {
@@ -81,23 +83,31 @@ public class Flight {
         this.passengers = passengers;
     }
 
-    public static double calculateFlightCost(int baseCost, int numberOfBagsChecked, boolean orderedMeal, String seatClass) {
-        double totalFlightCost = 0;
-        double seatMultiplier;
+    public int getDistanceTraveled() {
+        return distanceTraveled;
+    }
 
-        try {
-            if (seatClass.equals("economy")) {
-                seatMultiplier = economyClassMultiplier;
+    public void setDistanceTraveled(int distanceTraveled) {
+        this.distanceTraveled = distanceTraveled;
+    }
+
+    public static double calculateFlightCost(int baseCost, int numberOfBagsChecked, boolean orderedMeal, String seatClass) {
+        double totalFlightCost = 1;
+        double seatMultiplier;
+        int distanceTraveled = 0
+
+
+            if (seatClass.equals("firstClass")) {
+                seatMultiplier = firstClassMultiplier;
             } else if (seatClass.equals("business")) {
                 seatMultiplier = busClassMultiplier;
             } else {
-                seatMultiplier = firstClassMultiplier;
-            }
-        } catch (Exception e) {
-            // Handle the exception here
-        }
+                seatMultiplier = economyClassMultiplier;
 
-        totalFlightCost = seatMultiplier * baseCost;
+            }
+
+
+        totalFlightCost = seatMultiplier * (baseCost *  this.getDistanceTraveled());
 
         int costOfBags = numberOfBagsChecked * 15;
 

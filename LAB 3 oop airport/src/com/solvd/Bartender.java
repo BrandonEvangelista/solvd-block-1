@@ -2,6 +2,7 @@ package com.solvd;
 
 import com.solvd.airportInterfaces.PayableTimeClock;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class Bartender extends Employee implements PayableTimeClock {
@@ -22,7 +23,13 @@ public class Bartender extends Employee implements PayableTimeClock {
     public void clockOut() {
         LocalDateTime clockOutTime = LocalDateTime.now();
     }
-    
+
+    public double calculateTimeWorked() {
+        Duration duration = Duration.between(clockInTime, clockOutTime);
+        long seconds = duration.getSeconds();
+        double hours = (double) seconds / 3600;
+        return hours;
+    }
 
     @Override
     public void doAssignedTask1() {
